@@ -1,0 +1,21 @@
+//7
+//created a new variable called schema that's
+// used to define the structure of our data models.
+const mongoose = require('mongoose');
+const schema = mongoose.Schema;
+
+const Qschema = new schema({
+      question: String,
+      option1: String,
+      option2: String,
+      option3: String,
+      option4: String,
+      correctOption: String,
+});
+
+// mongoose.model() is a method provided by the mongoose package that creates a new model 
+// based on a Schema. You pass two arguments to mongoose.model(): the name of the model, 
+// and the Schema that defines its structure.
+const Qmodel = mongoose.model('quiz', Qschema );
+
+module.exports = Qmodel;
